@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Attendant Interview - Success & Setbacks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a8d8ea 0%, #fcf6bd 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            margin-bottom: 15px;
+        }
+        
+        .wing {
+            color: #ff8c00;
+            font-weight: 800;
+            font-size: 2em;
+            letter-spacing: 1px;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .sky {
+            color: #666;
+            font-weight: 800;
+            font-size: 2em;
+            letter-spacing: 1px;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .class-title {
+            font-size: 1.1em;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .main-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #a8d8ea, #fcf6bd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .topic-header {
+            background: linear-gradient(45deg, #a8d8ea, #fcf6bd);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .topic-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .question-header {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .question-icon {
+            font-size: 1.3em;
+            margin-right: 10px;
+        }
+        
+        .answer-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #28a745;
+        }
+        
+        .intro-statement {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-style: italic;
+            border-left: 4px solid #ff8c00;
+        }
+        
+        .star-method {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .star-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--star-color);
+            position: relative;
+        }
+        
+        .star-item.situation {
+            --star-color: #007bff;
+        }
+        
+        .star-item.task {
+            --star-color: #fd7e14;
+        }
+        
+        .star-item.action {
+            --star-color: #20c997;
+        }
+        
+        .star-item.result {
+            --star-color: #6f42c1;
+        }
+        
+        .star-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .star-badge {
+            background: var(--star-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 12px;
+        }
+        
+        .star-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.05em;
+        }
+        
+        .star-content {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .setback-section {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #dc3545;
+        }
+        
+        .setback-header {
+            background: linear-gradient(45deg, #dc3545, #e74c3c);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .key-learnings {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            margin: 25px 0;
+        }
+        
+        .key-learnings h3 {
+            color: #155724;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .key-learnings ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .key-learnings li {
+            margin-bottom: 8px;
+            color: #155724;
+        }
+        
+        .interview-tips {
+            background: linear-gradient(135deg, #e2e3e5, #d6d8db);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #6c757d;
+            margin: 20px 0;
+        }
+        
+        .interview-tips h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tip-icon {
+            margin-right: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #cce5ff, #b3d9ff);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .main-title {
+                font-size: 2em;
+            }
+            
+            .topic-number {
+                font-size: 1.5em;
+            }
+            
+            .question-header, .setback-header {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            
+            .answer-container, .setback-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span class="wing">WING</span> <span class="sky">SKY</span>
+            </div>
+            <div class="class-title">Sophie's Class</div>
+            <h1 class="main-title">✈️ Flight Attendant Interview</h1>
+        </div>
+        
+        <div class="topic-header">
+            <div class="topic-number">Topic 19: Success/Setback</div>
+        </div>
+        
+        <div class="section">
+            <div class="question-header">
+                <span class="question-icon">🏆</span>
+                What is the biggest achievement/success in your life?
+            </div>
+            
+            <div class="answer-container">
+                <div class="intro-statement">
+                    Since I am still relatively young, I feel that I have not yet had an achievement significant enough to call my 'biggest.'
+                </div>
+                
+                <div class="star-method">
+                    <div class="star-item situation">
+                        <div class="star-header">
+                            <div class="star-badge">S</div>
+                            <div class="star-title">Situation</div>
+                        </div>
+                        <div class="star-content">
+                            My greatest achievement happened during college when I was a member of the French drama club. I had been cast to play the role of a woman with a serious illness, which required a thin appearance.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item task">
+                        <div class="star-header">
+                            <div class="star-badge">T</div>
+                            <div class="star-title">Task</div>
+                        </div>
+                        <div class="star-content">
+                            At the time, I was a bit chubby, and with only two months left until the performance, I realized I would need to lose weight to portray the character authentically.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item action">
+                        <div class="star-header">
+                            <div class="star-badge">A</div>
+                            <div class="star-title">Action</div>
+                        </div>
+                        <div class="star-content">
+                            Determined to fit the role, I began a strict diet, eating only yogurt, coffee, and bananas. I also exercised for two hours every day. Losing weight was especially challenging in the hot summer months, but my desire to perform this role kept me motivated. After two months of hard work, I successfully lost 10 kilograms.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item result">
+                        <div class="star-header">
+                            <div class="star-badge">R</div>
+                            <div class="star-title">Result</div>
+                        </div>
+                        <div class="star-content">
+                            The play was a success, and I felt a deep sense of pride in my accomplishment. This experience taught me that with focus and dedication, I can overcome any challenge. To this day, I draw confidence from that time whenever I face new challenges.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="setback-header">
+                <span class="question-icon">💪</span>
+                Tell me the hardest thing you've ever gone through
+            </div>
+            
+            <div class="setback-section">
+                <div class="intro-statement">
+                    Everyone faces challenging times in their lives. Fortunately, I feel that I have been able to handle difficult moments without feeling overwhelmed.
+                </div>
+                
+                <div class="star-method">
+                    <div class="star-item situation">
+                        <div class="star-header">
+                            <div class="star-badge">S</div>
+                            <div class="star-title">Situation</div>
+                        </div>
+                        <div class="star-content">
+                            About ten years ago, my mother was diagnosed with cancer. Although cancer is treatable, the news came as a shock to my entire family, and it was especially devastating for my mother.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item task">
+                        <div class="star-header">
+                            <div class="star-badge">T</div>
+                            <div class="star-title">Task</div>
+                        </div>
+                        <div class="star-content">
+                            After her surgery, she went through chemotherapy, which caused many mood swings. I did my best to support her, even when she would sometimes become frustrated or emotional for no apparent reason. It was hard for me to accept that I could not do much to ease her pain.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item action">
+                        <div class="star-header">
+                            <div class="star-badge">A</div>
+                            <div class="star-title">Action</div>
+                        </div>
+                        <div class="star-content">
+                            I reminded myself to be patient and understanding, as I knew she was going through a profound mental and physical struggle. During that time, reading books helped me maintain a positive mindset.
+                        </div>
+                    </div>
+                    
+                    <div class="star-item result">
+                        <div class="star-header">
+                            <div class="star-badge">R</div>
+                            <div class="star-title">Result</div>
+                        </div>
+                        <div class="star-content">
+                            Now, I am grateful that my mother is healthier than ever. Since that experience, I have learned to stay composed when facing challenges. When something difficult arises, I take a deep breath, calmly assess the situation, and prioritize my actions. Above all, I focus on staying resilient and composed.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="key-learnings">
+            <h3>🎯 Key Elements for Success Stories:</h3>
+            <ul>
+                <li><strong>Choose meaningful examples:</strong> Select achievements that demonstrate valuable skills</li>
+                <li><strong>Show personal growth:</strong> Explain what you learned from the experience</li>
+                <li><strong>Demonstrate resilience:</strong> Highlight your ability to overcome challenges</li>
+                <li><strong>Connect to the role:</strong> Link your experience to flight attendant qualities</li>
+                <li><strong>Be honest:</strong> Acknowledge if you're young but show potential</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <strong>🌟 STAR Method Benefits:</strong> Using Situation, Task, Action, Result format helps you tell complete, compelling stories that demonstrate your problem-solving abilities and character.
+        </div>
+        
+        <div class="interview-tips">
+            <h3><span class="tip-icon">💡</span>Interview Tips:</h3>
+            <ul>
+                <li><strong>Prepare 2-3 examples:</strong> Have backup stories ready for different situations</li>
+                <li><strong>Focus on learning:</strong> Emphasize personal growth and lessons learned</li>
+                <li><strong>Stay positive:</strong> Even setbacks should show your resilience and growth</li>
+                <li><strong>Practice delivery:</strong> Tell your stories clearly and confidently</li>
+                <li><strong>Show emotional intelligence:</strong> Demonstrate empathy and self-awareness</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
